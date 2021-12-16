@@ -24,6 +24,8 @@ jobs:
           name: release-musl
           path: .
           repo: PhotonQuantum/blahaj
+      - name: Fix Permissions
+        run: chmod +x blahaj
       - name: Launch
         uses: superfly/flyctl-actions@1.1
         with:
