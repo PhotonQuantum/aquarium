@@ -1,0 +1,19 @@
+bind: "0.0.0.0:8080"
+programs:
+  placeholder:
+    command: sleep 99999
+  # nmsl:
+  #   command: ./nmsl-telegram-bot
+  #   env:
+  #     TELOXIDE_TOKEN: $NMSL_TOKEN
+  #     APP_BIND_ADDR: 127.0.0.1:8081
+  #     APP_WEBHOOK_URL: https://example.com/nmsl/
+  #     APP_WEBHOOK_PATH: $NMSL_PATH
+  #     APP_BIBLE: bible.json
+  #     RUST_LOG: info
+  #   http:
+  #     port: 8081
+  #     path: nmsl
+  #     strip-path: true
+  #     health-check:
+  #       path: /health-check
