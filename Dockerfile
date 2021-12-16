@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY blahaj config.yaml ./
 
+RUN chmod +x blahaj
+
 EXPOSE 8080
 
-RUN ["./blahaj", "config.yaml"]
+CMD ["./blahaj", "config.yaml"]
