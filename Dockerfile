@@ -4,7 +4,9 @@ WORKDIR /app
 
 COPY blahaj config.yaml ./
 
-RUN chmod +x blahaj
+COPY nmsl-telegram-bot bible.json ./
+
+RUN chmod +x blahaj nmsl-telegram-bot
 
 EXPOSE 8080
 

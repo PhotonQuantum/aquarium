@@ -24,6 +24,16 @@ jobs:
           name: release-musl
           path: .
           repo: PhotonQuantum/blahaj
+      - name: Fetch nmsl
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GH_TOKEN}}
+          workflow: deploy.yml
+          workflow_conclusion: success
+          branch: master
+          name: release-musl
+          path: .
+          repo: PhotonQuantum/nmsl-telegram-bot-rs
       - name: Launch
         uses: superfly/flyctl-actions@1.1
         with:
