@@ -17,3 +17,19 @@ programs:
         path: /health-check
         interval: 5s
         grace: 15s
+  hithit:
+    command: ./hithit_bot
+    env:
+      TELOXIDE_TOKEN: $HITHIT_TOKEN
+      APP_BIND_ADDR: 127.0.0.1:8082
+      APP_WEBHOOK_URL: https://aquarium.fly.dev/hithit/
+      APP_WEBHOOK_PATH: $HITHIT_PATH
+      RUST_LOG: info
+    http:
+      port: 8082
+      path: hithit
+      strip-path: true
+      health-check:
+        path: /health-check
+        interval: 5s
+        grace: 15s

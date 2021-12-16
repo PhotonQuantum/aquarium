@@ -6,7 +6,9 @@ COPY blahaj config.yaml ./
 
 COPY nmsl-telegram-bot bible.json ./
 
-RUN chmod +x blahaj nmsl-telegram-bot
+COPY hithit_bot ./
+
+RUN chmod +x blahaj nmsl-telegram-bot hithit_bot
 
 EXPOSE 8080
 
