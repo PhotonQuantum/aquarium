@@ -33,3 +33,20 @@ programs:
         path: /health-check
         interval: 5s
         grace: 15s
+  chi:
+    command: ./chi-tg-inline-rs
+    env:
+      TELOXIDE_TOKEN: $CHI_TOKEN
+      APP_BIND_ADDR: 127.0.0.1:8083
+      APP_CORPUS_URL: https://raw.githubusercontent.com/Chi-Task-Force/Chi-Corpus/master/
+      APP_WEBHOOK_URL: https://aquarium.fly.dev/chi/
+      APP_WEBHOOK_PATH: $CHI_PATH
+      RUST_LOG: info
+    http:
+      port: 8083
+      path: chi
+      strip-path: true
+      health-check:
+        path: /health-check
+        interval: 5s
+        grace: 15s

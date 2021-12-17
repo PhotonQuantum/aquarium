@@ -47,6 +47,16 @@ jobs:
           name: release-musl
           path: .
           repo: PhotonQuantum/hithit_bot
+      - name: Fetch chi
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GH_TOKEN}}
+          workflow: deploy.yml
+          workflow_conclusion: success
+          branch: main
+          name: release-musl
+          path: .
+          repo: Chi-Task-Force/Chi-Telegram-Inline-Bot-Neo
       - name: Launch
         uses: superfly/flyctl-actions@1.1
         with:
