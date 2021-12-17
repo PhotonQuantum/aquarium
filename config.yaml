@@ -39,6 +39,8 @@ programs:
       TELOXIDE_TOKEN: $CHI_TOKEN
       APP_BIND_ADDR: 127.0.0.1:8083
       APP_CORPUS_URL: https://raw.githubusercontent.com/Chi-Task-Force/Chi-Corpus/master/
+      APP_MONGODB_URI: $CHI_MONGODB_URI
+      APP_MONGODB_DBNAME: chi
       APP_WEBHOOK_URL: https://aquarium.fly.dev/chi/
       APP_WEBHOOK_PATH: $CHI_PATH
       RUST_LOG: info
