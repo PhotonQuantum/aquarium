@@ -25,6 +25,7 @@ programs:
       APP_WEBHOOK_URL: https://aquarium.fly.dev/hithit/
       APP_WEBHOOK_PATH: $HITHIT_PATH
       RUST_LOG: info
+      SENTRY_DSN: $HITHIT_SENTRY_DSN
     http:
       port: 8082
       path: hithit
