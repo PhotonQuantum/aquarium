@@ -16,9 +16,10 @@ jobs:
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Fetch BLÅHAJ
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: deploy.yml
@@ -28,7 +29,7 @@ jobs:
           path: .
           repo: PhotonQuantum/blahaj
       - name: Fetch nmsl
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: deploy.yml
@@ -38,7 +39,7 @@ jobs:
           path: .
           repo: PhotonQuantum/nmsl-telegram-bot-rs
       - name: Fetch hithit
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: deploy.yml
@@ -48,7 +49,7 @@ jobs:
           path: .
           repo: PhotonQuantum/hithit_bot
       - name: Fetch chi
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: deploy.yml
@@ -58,6 +59,6 @@ jobs:
           path: .
           repo: Chi-Task-Force/Chi-Telegram-Inline-Bot-Neo
       - name: Launch
-        uses: superfly/flyctl-actions@1.1
-        with:
-          args: "deploy"
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
