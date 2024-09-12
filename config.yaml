@@ -22,8 +22,10 @@ programs:
     env:
       TELOXIDE_TOKEN: $HITHIT_TOKEN
       APP_BIND_ADDR: 127.0.0.1:8082
-      APP_WEBHOOK_URL: https://aquarium.fly.dev/hithit/
-      APP_WEBHOOK_PATH: $HITHIT_PATH
+      APP_WEBHOOK_URL: https://aquarium.fly.dev/hithit/$HITHIT_PATH
+      APP_WEBHOOK_PATH: /$HITHIT_PATH
+      DATABASE_URL: $HITHIT_DATABASE_URL
+      DATABASE_PASSWORD: $HITHIT_DATABASE_PASSWORD
       RUST_LOG: info
       SENTRY_DSN: $HITHIT_SENTRY_DSN
     http:
