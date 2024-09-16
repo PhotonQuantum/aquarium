@@ -6,9 +6,9 @@ COPY blahaj config.yaml ./
 
 COPY nmsl-telegram-bot bible.json ./
 
-COPY hithit_bot chi-tg-inline-rs ./
+COPY hithit_bot chi-tg-inline-rs tg-agda-detector ./
 
-RUN chmod +x blahaj nmsl-telegram-bot hithit_bot chi-tg-inline-rs
+RUN chmod +x blahaj nmsl-telegram-bot hithit_bot chi-tg-inline-rs tg-agda-detector
 
 EXPOSE 8080
 

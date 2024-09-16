@@ -55,3 +55,21 @@ programs:
         path: /health-check
         interval: 5s
         grace: 15s
+  agda:
+    command: ./tg-agda-detector
+    env:
+      TELOXIDE_TOKEN: $AGDA_TOKEN
+      APP_BIND_ADDR: 127.0.0.1:8084
+      APP_WEBHOOK_URL: https://aquarium.fly.dev/agda/$AGDA_PATH
+      APP_WEBHOOK_PATH: /$AGDA_PATH
+      DATABASE_URL: $AGDA_DATABASE_URL
+      DATABASE_PASSWORD: $AGDA_DATABASE_PASSWORD
+      RUST_LOG: info
+    http:
+      port: 8084
+      path: agda
+      strip-path: true
+      health-check:
+        path: /health-check
+        interval: 5s
+        grace: 15s
